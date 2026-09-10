@@ -10,17 +10,25 @@
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
-        /* === BASIC RESET & VARIABLES === */
+        /* === NEW COLOR VARIABLES === */
         :root {
-            --primary: #007979;
-            --secondary: #24B1B1;
-            --neutral: #737877;
-            --bg-light: #F6F7F7;
-            --text-dark: #1A1C1D;
+            /* Palette: Corporate / Tech Blue */
+            --primary: #2563EB;     /* Bright blue (Logo, buttons, icons) */
+            --secondary: #1E40AF;   /* Dark blue (For button hover effect) */
+            --tertiary: #F59E0B;    /* Warm amber (In case you want to add alerts or accents) */
+            --neutral: #4B5563;     /* Blue-grey for descriptive texts */
+            
+            /* Background and general text colors */
+            --bg-light: #F8FAFC;    /* An almost white background, fresher */
+            --text-dark: #0F172A;   /* A very dark night blue for titles */
             --white: #FFFFFF;
+            
+            /* Original typography maintained */
             --font-main: 'Work Sans', sans-serif;
+            --font-label: 'JetBrains Mono', monospace;
         }
 
+        /* === BASIC RESET === */
         * {
             margin: 0;
             padding: 0;
@@ -32,8 +40,10 @@
             background-color: var(--bg-light);
             color: var(--neutral);
             line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
         }
 
+        /* === NAVIGATION (HEADER) === */
         header {
             display: flex;
             justify-content: space-between;
@@ -59,6 +69,12 @@
             text-decoration: none;
             color: var(--neutral);
             font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--primary);
         }
 
         .btn-login {
@@ -67,6 +83,12 @@
             padding: 0.6rem 1.8rem;
             border-radius: 4px;
             font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-login:hover {
+            background-color: var(--secondary);
+            color: var(--white);
         }
 
         /* === HERO SECTION === */
@@ -108,13 +130,25 @@
             padding: 1rem 2rem;
             border-radius: 4px;
             font-weight: 600;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
         }
 
-        .hero-image { flex: 1; }
+        .btn-primary:hover {
+            background-color: var(--secondary);
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+        }
+
         .hero-image img {
             width: 100%;
             max-width: 650px;
             border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
             object-fit: cover;
         }
 
@@ -144,6 +178,12 @@
             border: 1px solid #E5E7E7;
             border-radius: 8px;
             overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
         }
 
         .card-img-container {
@@ -164,6 +204,20 @@
             font-size: 1.05rem;
             font-weight: 600;
             color: var(--text-dark);
+        }
+
+        /* === RESPONSIVE DESIGN === */
+        @media (max-width: 1024px) {
+            .hero h1 { font-size: 2.8rem; }
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 1rem; }
+            .hero { flex-direction: column; text-align: center; padding-top: 2rem; gap: 2rem; }
+            .hero-content { max-width: 100%; }
+            .hero-image { justify-content: center; }
+            .services-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
         }
     </style>
 </head>
