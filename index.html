@@ -8,6 +8,116 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* === BASIC RESET & VARIABLES === */
+        :root {
+            --primary: #007979;
+            --secondary: #24B1B1;
+            --neutral: #737877;
+            --bg-light: #F6F7F7;
+            --text-dark: #1A1C1D;
+            --white: #FFFFFF;
+            --font-main: 'Work Sans', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-light);
+            color: var(--neutral);
+            line-height: 1.6;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--neutral);
+            font-weight: 500;
+        }
+
+        .btn-login {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 0.6rem 1.8rem;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        /* === HERO SECTION === */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 4rem 5% 6rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+            gap: 4rem;
+        }
+
+        .hero-content {
+            flex: 1;
+            max-width: 550px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.2rem;
+            color: var(--text-dark);
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            color: var(--neutral);
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            background-color: var(--primary);
+            color: var(--white);
+            text-decoration: none;
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .hero-image { flex: 1; }
+        .hero-image img {
+            width: 100%;
+            max-width: 650px;
+            border-radius: 12px;
+            object-fit: cover;
+        }
+    </style>
 </head>
 <body>
 
@@ -20,6 +130,18 @@
             <a href="#" class="btn-login">Login</a>
         </nav>
     </header>
+
+    <!-- Main Section (Hero) -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Gestión Eficiente para tu Supermercado</h1>
+            <p>Simplifica tus operaciones diarias con GrocerQuick POS. Un sistema diseñado para la velocidad, claridad y eficiencia ergonómica en el punto de venta.</p>
+            <a href="#" class="btn-primary">Comenzar Ahora &rarr;</a>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=800" alt="Sistema POS GrocerQuick en supermercado">
+        </div>
+    </section>
 
 </body>
 </html>
